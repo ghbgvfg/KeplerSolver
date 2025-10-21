@@ -21,13 +21,14 @@ namespace MainNameSpace
             var earth = PlanetVariables.Earth();
             var iss = new Satellite
             {
-                Name = "МКС",
-                Altitude = 408,
-                Inclination = 51.6,
+                Name = "GPS",
+                Altitude = 20200,
+                Inclination = 55,
                 CurrentAnomaly = 0
             };
 
             double period = OrbitalCalculator.OrbitalPeriodviaHeight(iss, earth);
+            iss.OrbitalPeriod = period; // можно использовать iss.OrbitalPeriod в других вычислениях
             Console.WriteLine($"Orbital period for {period:F2} minutes");
         }
     }
