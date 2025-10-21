@@ -1,0 +1,15 @@
+/home/dodik/gitRepos/KeplerSolver/obj/Debug/net9.0/KeplerSolver.GeneratedMSBuildEditorConfig.editorconfig
+/home/dodik/gitRepos/KeplerSolver/obj/Debug/net9.0/KeplerSolver.AssemblyInfoInputs.cache
+/home/dodik/gitRepos/KeplerSolver/obj/Debug/net9.0/KeplerSolver.AssemblyInfo.cs
+/home/dodik/gitRepos/KeplerSolver/obj/Debug/net9.0/KeplerSolver.csproj.CoreCompileInputs.cache
+/home/dodik/gitRepos/KeplerSolver/obj/Debug/net9.0/KeplerSolver.sourcelink.json
+/home/dodik/gitRepos/KeplerSolver/bin/Debug/net9.0/KeplerSolver
+/home/dodik/gitRepos/KeplerSolver/bin/Debug/net9.0/KeplerSolver.deps.json
+/home/dodik/gitRepos/KeplerSolver/bin/Debug/net9.0/KeplerSolver.runtimeconfig.json
+/home/dodik/gitRepos/KeplerSolver/bin/Debug/net9.0/KeplerSolver.dll
+/home/dodik/gitRepos/KeplerSolver/bin/Debug/net9.0/KeplerSolver.pdb
+/home/dodik/gitRepos/KeplerSolver/obj/Debug/net9.0/KeplerSolver.dll
+/home/dodik/gitRepos/KeplerSolver/obj/Debug/net9.0/refint/KeplerSolver.dll
+/home/dodik/gitRepos/KeplerSolver/obj/Debug/net9.0/KeplerSolver.pdb
+/home/dodik/gitRepos/KeplerSolver/obj/Debug/net9.0/KeplerSolver.genruntimeconfig.cache
+/home/dodik/gitRepos/KeplerSolver/obj/Debug/net9.0/ref/KeplerSolver.dll
