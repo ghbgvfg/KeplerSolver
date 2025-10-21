@@ -30,7 +30,7 @@ namespace PublicVariables
 
 	public class Satellite // Класс для хранения данных спутника
 	{
-		public string Name; // Имя спутника
+		public string? Name; // Имя спутника
 
 		public double Altitude; // км над Планетой (будет определять в будущем скорость полета - чем выше тем медленнее, период обращения вокруг земли и зону обзора)
 
