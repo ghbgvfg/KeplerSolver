@@ -1,16 +1,14 @@
 ﻿using System;
 using PublicVariables;
+using SatelliteMath;
 
 namespace MainNameSpace
 {
-    class OrbitalCalculator
+    class AskUser
     {
-        public static double OrbitalPeriodviaHeight(Satellite satellite, PlanetVariables planet)
+        public static void AskSatelliteData()
         {
-            double semiMajorAxis = (planet.Radius + satellite.Altitude) * 1000; // полуось
-            double periodSeconds = 2 * Math.PI * Math.Sqrt(Math.Pow(semiMajorAxis,3) / planet.GravitationalParameter);
 
-            return periodSeconds / 60;
         }
     }
 
@@ -18,6 +16,8 @@ namespace MainNameSpace
     {
         static void Main()
         {
+            AskUser.AskSatelliteData();
+
             var earth = PlanetVariables.Earth();
             var iss = new Satellite
             {
@@ -27,8 +27,8 @@ namespace MainNameSpace
                 CurrentAnomaly = 0
             };
 
-            double period = OrbitalCalculator.OrbitalPeriodviaHeight(iss, earth);
-            iss.OrbitalPeriod = period; // можно использовать iss.OrbitalPeriod в других вычислениях
+            double period = SatelliteMath.OrbitalCalculator.OrbitalPeriodviaHeight(iss, earth);
+            //iss.OrbitalPeriod = period; // можно использовать iss.OrbitalPeriod в других вычислениях
             Console.WriteLine($"Orbital period for {iss.Name}: {period:F2} minutes");
         }
     }
