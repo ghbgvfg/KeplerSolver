@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("KeplerSolver")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6d83309c37e120d7925567b5c59adf71bebea799")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a87511ae7429cfcb15e40da2727665fdc5944504")]
 [assembly: System.Reflection.AssemblyProductAttribute("KeplerSolver")]
 [assembly: System.Reflection.AssemblyTitleAttribute("KeplerSolver")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

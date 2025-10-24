@@ -10,7 +10,8 @@ namespace GUI
 		{
 			while (true)
 			{
-				Console.WriteLine($"Welcome to my 'program' KeplerSolver!\nSelect a function by writing its number");
+				Console.WriteLine($"===Welcome to my 'program' KeplerSolver!===\nSelect a function by writing its number");
+				Console.WriteLine("2.Calculate the orbital velocity");
 				Console.WriteLine("1.Calculate the orbital period via height");
 				Console.WriteLine("0.exit");
 				Console.Write("Your choice: ");
@@ -23,15 +24,56 @@ namespace GUI
 					case "1":
 						CalculOrbPeriodViaHeightGUI();
 						break;
+					case "2":
+						CalculateOrbVelocity();
+						break;
 					default:
-						Console.WriteLine("{choice} is probably not a command. If u think that u typed command correctly problem might be on program's side");
+						Console.WriteLine("{choice} is probably not a command. If u think that command is correct, problem might be on program's side");
 						break;
 				}
 			}
 		}
 		static void CalculOrbPeriodViaHeightGUI()
 		{
-			PlanetVariables ChosenPlanet = PlanetVariables.Earth(); // значение по умолчанию
+			PlanetVariables ChosenPlanet = AskPlanet();
+			string UserChosenName = AskSatteliteName();
+			double UserChosenAltitude = AskAltitude();
+			double UserChosenInclination = AskInclination();
+			double UserChosenCurrentAnomaly = AskCurrentAnomaly();
+
+			var iss = new Satellite
+			{
+				Name = UserChosenName,
+				Altitude = UserChosenAltitude,
+				Inclination = UserChosenInclination,
+				CurrentAnomaly = UserChosenCurrentAnomaly
+			};
+
+			double period = SatelliteMath.OrbitalCalculator.OrbitalPeriodviaHeight(iss, ChosenPlanet);
+			iss.OrbitalPeriod = period; // можно использовать iss.OrbitalPeriod в других вычислениях
+			Console.WriteLine($"Orbital period for {iss.Name}: {period:F2} minutes\n");
+		}
+
+		static void CalculateOrbVelocity()
+		{
+			PlanetVariables ChosenPlanet = AskPlanet();
+			string UserChosenName = AskSatteliteName();
+			double UserChosenAltitude = AskAltitude();
+
+			var iss = new Satellite
+			{
+				Name = UserChosenName,
+				Altitude = UserChosenAltitude,
+			};
+
+			double orbVelocity = SatelliteMath.OrbitalCalculator.OrbitalVelocity(iss, ChosenPlanet);
+			iss.OrbitalVelocity = orbVelocity;
+			Console.WriteLine($"Orbital velocity for {iss.Name}: {orbVelocity:F2} meters per sec\n");
+		}
+
+		static PlanetVariables AskPlanet()
+		{
+			PlanetVariables ChosenPlanet = PlanetVariables.Earth(); // по умолчанию Земля
 
 			Console.Write("Pls enter your planet(Eath,Mars.Moon): ");
 			string InputChosenPlanet = Console.ReadLine() ?? "Earth";
@@ -51,30 +93,37 @@ namespace GUI
 					ChosenPlanet = PlanetVariables.Earth();
 					break;
 			}
+			return ChosenPlanet;
+		}
 
+		// ask methods
+		
+		static string AskSatteliteName()
+		{
 			Console.Write($"Please enter Name of sattelite: ");
 			string UserChosenName = Console.ReadLine() ?? "Unnamed";
+			return UserChosenName;
+		}
 
+		static double AskAltitude()
+		{
 			Console.Write("Please enter Altitude: ");
 			double UserChosenAltitude = SafeParseDouble(Console.ReadLine());
+			return UserChosenAltitude;
+		}
 
+		static double AskInclination()
+		{
 			Console.Write("Please enter Inclination: ");
 			double UserChosenInclination = SafeParseDouble(Console.ReadLine());
+			return UserChosenInclination;
+		}
 
+		static double AskCurrentAnomaly()
+		{
 			Console.Write("Please enter Current anomaly(if you don't know just type 0): ");
 			double UserChosenCurrentAnomaly = SafeParseDouble(Console.ReadLine());
-
-			var iss = new Satellite
-			{
-				Name = UserChosenName,
-				Altitude = UserChosenAltitude,
-				Inclination = UserChosenInclination,
-				CurrentAnomaly = UserChosenCurrentAnomaly
-			};
-
-			double period = SatelliteMath.OrbitalCalculator.OrbitalPeriodviaHeight(iss, ChosenPlanet);
-			iss.OrbitalPeriod = period; // можно использовать iss.OrbitalPeriod в других вычислениях
-			Console.WriteLine($"Orbital period for {iss.Name}: {period:F2} minutes\n");
+			return UserChosenCurrentAnomaly;
 		}
 
 		private static double SafeParseDouble(string? input)

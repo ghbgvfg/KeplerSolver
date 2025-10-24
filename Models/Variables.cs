@@ -39,5 +39,6 @@ namespace PublicVariables
 		public double CurrentAnomaly; // градусы (0 - 360, показывает где сейчас спутник на своей орбите)
 
 		public double OrbitalPeriod; // минут - время полного витка вокруг Планеты
+		public double OrbitalVelocity; // м/с
 	}
 }

@@ -5,7 +5,6 @@ using GUI;
 
 namespace MainNameSpace
 {
-
     class Program
     {
         static void Main()
