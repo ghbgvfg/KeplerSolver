@@ -1,3 +1,10 @@
 # KeplerSolver
-No desription yet.
-I'm just trying to improve my code structure and stuff like that
+
+C# library for satellite orbit calculations using Keplerian mechanics.
+
+## Features
+1.Orbital period & velocity calculations
+2.Multiple celestial bodies (Earth, Mars, Moon)
+3.Extensible architecture
+4.Clean API
+
