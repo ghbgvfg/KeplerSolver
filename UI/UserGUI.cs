@@ -75,7 +75,7 @@ namespace GUI
 		{
 			PlanetVariables ChosenPlanet = PlanetVariables.Earth(); // по умолчанию Земля
 
-			Console.Write("Pls enter your planet(Eath,Mars.Moon): ");
+			Console.Write("Pls enter your planet(Earth,Mars.Moon): ");
 			string InputChosenPlanet = Console.ReadLine() ?? "Earth";
 			switch (InputChosenPlanet.ToLower())
 			{
@@ -97,7 +97,7 @@ namespace GUI
 		}
 
 		// ask methods
-		
+
 		static string AskSatteliteName()
 		{
 			Console.Write($"Please enter Name of sattelite: ");

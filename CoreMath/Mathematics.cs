@@ -19,5 +19,9 @@ namespace SatelliteMath
             // Формула: v = √(μ / r)
             // где r = planet.Radius + satellite.Altitude
         }
+        public static double AngularVelocity(Satellite satellite)
+        {
+            return 360.0 / satellite.OrbitalPeriodviaHeight;
+        }
     }
 }
