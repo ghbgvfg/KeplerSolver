@@ -1,13 +1,18 @@
 namespace PublicVariables
 {
-	public class PlanetVariables // Класс для переменных планет
+	public static class Constants // Class for Constants
+	{
+		public const double MetersInKilometer = 1000;
+	}
+
+	public class PlanetVariables // Class for Planet's variables
 	{
 		public string Name { get; set; }
-		public double Radius { get; set; } // км
-		public double Mass { get; set; } // кг
-		public double GravitationalParameter { get; set; } // м^3/с^2
+		public double Radius { get; set; } // km
+		public double Mass { get; set; } // kg
+		public double GravitationalParameter { get; set; } // meters^3/seconds^2
 
-		// Конструктор для кастомных планет
+		// Constructor for custom planets
 		public PlanetVariables(string name, double radius, double mass, double gravParam)
 		{
 			Name = name;
@@ -23,22 +28,22 @@ namespace PublicVariables
 
 		public static double CalculateGravParam(double mass)
 		{
-			const double G = 6.67430e-11; // гравитационная постоянная
+			const double G = 6.67430e-11; // gravitational constant
 			return G * mass;
 		}
 	}
 
-	public class Satellite // Класс для хранения данных спутника
+	public class Satellite // Class for satellite's variables
 	{
-		public string? Name; // Имя спутника
+		public string? Name;// Satellite's name
 
-		public double Altitude; // км над Планетой (будет определять в будущем скорость полета - чем выше тем медленнее, период обращения вокруг земли и зону обзора)
+		public double Altitude; // km above Earth (will determine the future flight speed - the higher the slower, the period of revolution around the earth and the field of view)
 
-		// Работа с градусами
-		public double Inclination; // градусы (0 - 180, где 0° = экваториальная орбита, 90° = полярная орбита, 180° = ретроградная орбита)
-		public double CurrentAnomaly; // градусы (0 - 360, показывает где сейчас спутник на своей орбите)
+		// Working with degrees
+		public double Inclination; // degrees (0 - 180, where 0° = equatorial orbit, 90° = polar orbit, 180° = retrograde orbit)
+		public double CurrentAnomaly; // degrees (0 - 360, shows where the satellite is currently in its orbit)
 
-		public double OrbitalPeriod; // минут - время полного витка вокруг Планеты
-		public double OrbitalVelocity; // м/с
+		public double OrbitalPeriod; // minutes - the time of a full revolution around the Planet
+		public double OrbitalVelocity; // meters per second
 	}
 }

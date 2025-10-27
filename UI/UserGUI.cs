@@ -50,7 +50,7 @@ namespace GUI
 			};
 
 			double period = SatelliteMath.OrbitalCalculator.OrbitalPeriodviaHeight(iss, ChosenPlanet);
-			iss.OrbitalPeriod = period; // можно использовать iss.OrbitalPeriod в других вычислениях
+			iss.OrbitalPeriod = period; // iss.OrbitalPeriod can be used later
 			Console.WriteLine($"Orbital period for {iss.Name}: {period:F2} minutes\n");
 		}
 
@@ -73,7 +73,7 @@ namespace GUI
 
 		static PlanetVariables AskPlanet()
 		{
-			PlanetVariables ChosenPlanet = PlanetVariables.Earth(); // по умолчанию Земля
+			PlanetVariables ChosenPlanet = PlanetVariables.Earth(); // Earth as default
 
 			Console.Write("Pls enter your planet(Earth,Mars.Moon): ");
 			string InputChosenPlanet = Console.ReadLine() ?? "Earth";
